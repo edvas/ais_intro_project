@@ -25,6 +25,8 @@ void loop()
 {
   if(time_started == 0 && (!digitalRead(INPUT_BUTTON_START) || analogRead(5) < 300))
   {
+    lcd.clear();
+    lcd.print("...");
 #ifdef SOUND
     int i = 1000;
     while(i >= 10)
@@ -32,7 +34,7 @@ void loop()
       tone(OUTPUT_BUZZER, 220, i);
       delay(i);
       delay(i);
-      i = 0.83 * i;
+      i = 0.80 * i;
     }
 #endif
     
@@ -59,7 +61,7 @@ void loop()
         lcd.print("Vann ");
         break;
       case 1:
-        lcd.print("Tyrkershot ");
+        lcd.print("Hot n'Sweet ");
         break;
       case 2:
         lcd.print("Fireball ");
@@ -71,7 +73,6 @@ void loop()
         lcd.print("Tequila ");
         break;
     }
-    
     
 #ifdef SOUND
     tone(OUTPUT_BUZZER, 880, 200);
