@@ -58,7 +58,7 @@ void loop()
     switch(type)
     {
       case 0:
-        lcd.print("Vann ");
+        lcd.print("Water ");
         break;
       case 1:
         lcd.print("Hot n'Sweet ");
